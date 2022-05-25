@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps, router }) {
                 <Modal />
                 <Layout>
                   <AnimatePresence initial={false} exitBeforeEnter>
-                    <Component {...pageProps} key={router.route} />
+                    <Component  {...pageProps} key={router.route} />
                   </AnimatePresence>
                   <ToastContainer {...toastOptions} />
                 </Layout>

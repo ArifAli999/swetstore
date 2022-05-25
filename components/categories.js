@@ -21,22 +21,19 @@ export const Categories = () => {
         setCats(cat.data)
         
       };
-      const handleSubmit = (value) => {
-        router.push(`/categories/${value}` )
-    };
+    
     
 
   return (
     <div className='grid md:grid-cols-3 gap-10 items-center align-middle self-center justify-items-center mt-10'>
 
         {cats.map((c)=> (
-            <motion.div
-            initial={{ x: -10 }}
-            animate={{ x: 0 }}
+            <div
             key={c.id}
-            onClick={()=> handleSubmit(c.slug)}
+
             className=' group h-full w-full bg-gray-400 shadow-xl cursor-pointer opacity-90 hover:opacity-100 transition-all ease-in-out duration-500 overflow-hidden '>
-            <div className=' grid grid-cols-5 justify-items-center justify-center items-center align-middle w-full h-full '>
+            <div className=' grid grid-cols-5 justify-items-center justify-center items-center align-middle w-full h-full '
+           >
   
               <div className='col-span-3  align-middle  p-1.5 rounded float-right ml-20'>
                 <motion.div
@@ -47,7 +44,7 @@ export const Categories = () => {
   
                   className='  text-gray-300 text-center z-40 group-hover:text-gray-50 transition-all duration-300 ease-in-out p-2 text-4xl font-serif font-black'>
                  
-                  <a> {c.name}</a>
+                  <a href={`/categories/${c.slug}`} > {c.name}</a>
        
                  
                   </motion.div>
@@ -70,7 +67,7 @@ export const Categories = () => {
   
   
   
-          </motion.div>
+          </div>
 
         ))}
        
