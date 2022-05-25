@@ -8,7 +8,7 @@ import ProductList from "../components/ProductList";
 import ProductGrid from "../components/ProductGrid";
 import Home from "./home";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await commerce.products.list();
   const {data: categories} = await commerce.categories.list()
 
@@ -21,7 +21,7 @@ export async function getStaticProps() {
       products,
       categories
     },
-    revalidate: 60,
+    
   };
 }
 
