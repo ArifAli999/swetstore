@@ -1,9 +1,9 @@
 import "react-toastify/dist/ReactToastify.css";
 import "tailwindcss/tailwind.css";
-
+import { motion } from "framer-motion";
 
 import { useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { ToastContainer } from "react-toastify";
@@ -62,10 +62,30 @@ function MyApp({ Component, pageProps, router }) {
               <CheckoutProvider>
                 <Modal />
                 <Layout>
+                  <motion.div
+                  
+                   initial="pageInitial"
+                   animate="pageAnimate"
+                   variants={{
+                     pageInitial : {
+                       opacity: 0,
+                       x:-200
+
+                     },
+                     pageAnimate: {
+                       opacity: 1,
+                       x:0
+                      
+                     },
+                   }}>
+
+                
                   <AnimatePresence initial={false} exitBeforeEnter>
                     <Component  {...pageProps} key={router.route} />
                   </AnimatePresence>
                   <ToastContainer {...toastOptions} />
+                  </motion.div>
+
                 </Layout>
               </CheckoutProvider>
             </CartProvider>

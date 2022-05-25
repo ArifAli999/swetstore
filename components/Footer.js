@@ -5,15 +5,9 @@ import CommerceJsSVG from "../svg/commercejs.svg";
 
 function Footer() {
   return (
-    <footer className="py-6 lg:py-12">
+    <footer className="py-4 lg:py-6 fixed bottom-0 w-full bg-gray-200">
       <div className="container mx-auto px-3 md:px-4 lg:px-5 md:flex md:items-center space-y-6 md:space-y-0">
-        <div className="w-full md:w-1/3">
-          <Link href="/">
-            <a title="Return to ChopChop">
-              <LogoSVG className="w-full md:w-auto md:h-8" />
-            </a>
-          </Link>
-        </div>
+     
 
         <div className="w-full md:w-1/3 flex items-center md:justify-center">
           <a
@@ -60,9 +54,7 @@ function Footer() {
               <a className="text-black">Privacy</a>
             </Link>
             ,<span>&copy; 2021</span>
-            <p className="hidden md:block italic font-serif">
-              Fine tools for thoughtful cooks
-            </p>
+          
           </div>
         </div>
       </div>
