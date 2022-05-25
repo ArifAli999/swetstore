@@ -1,6 +1,6 @@
 import { commerce } from '../../lib/commerce'
 import ProductList from '../../components/ProductList';
-
+import {AnimatePresence} from  'framer-motion'
 
 
 export async function getStaticProps({params}) {
@@ -40,9 +40,9 @@ export async function getStaticPaths () {
 export default function CategoryPage ({category,products}){
 
     return (
-        <div>
+        <AnimatePresence>
             <h1>{category.name}</h1>
             <ProductList products={products}/>
-        </div>
+        </AnimatePresence>
     )
 }
