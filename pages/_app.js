@@ -1,6 +1,5 @@
 import "react-toastify/dist/ReactToastify.css";
 import "tailwindcss/tailwind.css";
-import '../styles/globals.css'
 
 
 import { useEffect } from "react";

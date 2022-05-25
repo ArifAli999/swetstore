@@ -22,7 +22,7 @@ export const Categories = () => {
         
       };
       const handleSubmit = (value) => {
-        router.push(`/categories/${value}`)
+        router.push(`/categories/${value}` )
     };
     
 
@@ -46,9 +46,9 @@ export const Categories = () => {
                   }}
   
                   className='  text-gray-300 text-center z-40 group-hover:text-gray-50 transition-all duration-300 ease-in-out p-2 text-4xl font-serif font-black'>
-                 <Link href={`/categories/${c.slug}`}>
+                 
                   <a> {c.name}</a>
-                 </Link>
+       
                  
                   </motion.div>
   
