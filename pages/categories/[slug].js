@@ -11,7 +11,7 @@ export async function getStaticProps({params}) {
     })
 
     const {data: products} = await commerce.products.list ({
-        category_slug : slg,
+        category_slug : slug,
     });
 
     return {
