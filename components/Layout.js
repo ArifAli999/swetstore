@@ -3,10 +3,10 @@ import Footer from "./Footer";
 function Layout({ children }) {
   return (
     <>
-      <div className="shadow-md">
+      <div className="">
         <div className="">{children}</div>
       </div>
-      <Footer />
+     
     </>
   );
 }

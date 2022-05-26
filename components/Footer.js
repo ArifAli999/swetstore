@@ -5,7 +5,7 @@ import CommerceJsSVG from "../svg/commercejs.svg";
 
 function Footer() {
   return (
-    <footer className="py-4 lg:py-6 fixed bottom-0 w-full bg-gray-200">
+    <footer className="py-4 lg:py-6 w-full bg-gray-200">
       <div className="container mx-auto px-3 md:px-4 lg:px-5 md:flex md:items-center space-y-6 md:space-y-0">
      
 

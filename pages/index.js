@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
 
+
 import { commerce } from "../lib/commerce";
 
 import Header from "../components/Header";
@@ -9,8 +10,14 @@ import ProductGrid from "../components/ProductGrid";
 import Home from "./home";
 
 export async function getServerSideProps() {
-  const { data } = await commerce.products.list();
+  const { data } = await commerce.products.list({
+    limit: 5,
+  });
   const {data: categories} = await commerce.categories.list()
+
+
+
+ 
 
 
 
@@ -19,14 +26,15 @@ export async function getServerSideProps() {
   return {
     props: {
       products,
-      categories
+      categories,
+ 
     },
     
   };
 }
 
-function IndexPage({ products,categories }) {
-  console.log(categories)
+function IndexPage({ products,categories  }) {
+
   return (
     <>
       <Head>
@@ -39,22 +47,10 @@ function IndexPage({ products,categories }) {
 
             <Home/>
 
-            <motion.div
-              className="md:py-12 hidden md:block md:sticky md:top-0 mb-20"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 0.25,
-                },
-              }}
-              exit={{ opacity: 0, y: -50 }}
-            >
-
-        
-            </motion.div>
+           
           </div>
+
+
 
           <motion.div
             className="md:min-h-screen p-6 md:py-12 flex items-center md:w-full md:z-40 w-full"

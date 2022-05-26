@@ -18,6 +18,9 @@ module.exports = {
       height: {
         112: "28rem",
       },
+      height: {
+        '128': '90vh',
+      },
       rotate: {
         '-25': '-25deg',
       },
@@ -39,7 +42,8 @@ module.exports = {
       fontStyle: ["hover"],
       textColor: ["checked"],
       rotate: ['group-hover'],
-      scale: ['group-hover']
+      scale: ['group-hover'],
+    
     },
   },
 };
