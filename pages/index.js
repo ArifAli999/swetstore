@@ -8,6 +8,9 @@ import Header from "../components/Header";
 import ProductList from "../components/ProductList";
 import ProductGrid from "../components/ProductGrid";
 import Home from "./home";
+import Caro from "../components/caro";
+import FeaturedProds from "../components/Form/FeaturedProds";
+import { Categories } from "../components/categories";
 
 export async function getServerSideProps() {
   const { data } = await commerce.products.list({
@@ -41,14 +44,16 @@ function IndexPage({ products,categories  }) {
         <title>Radhas Sweet Shop</title>
       </Head>
       <div className="md:min-h-screen ">
-        <div className="">
-          <div className="  flex ">
-            <Header />
-
-            <Home/>
+      <div className='container mx-auto w-full h-full  overflow-hidden'>
+          
+          <Caro /> 
+          <Categories/>
+          <FeaturedProds/>
+        
+        
 
            
-          </div>
+         
 
 
 
