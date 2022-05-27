@@ -7,6 +7,7 @@ function Product({ products, handleChange }) {
 
 
   console.log(products)
+  if (!products || products.length === 0) return null;
   return (
     <>
       <div className='grid md:grid-cols-4 grid-cols-1 gap-10 mb-10 mt-5 '>
@@ -38,7 +39,7 @@ function Product({ products, handleChange }) {
             </div>
 
             <div className='flex justify-between mt-2'>
-              <p className='text-gray-900 font-sans font-semibold text-lg '>{product.name}</p>
+              <a href={`/products/${product.permalink}`} className='text-gray-900 font-sans font-semibold text-lg '>{product.name}</a>
             </div>
 
           </div>

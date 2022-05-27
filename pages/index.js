@@ -18,7 +18,7 @@ import { useCartDispatch } from '../context/cart';
 
 export async function getServerSideProps() {
   const { data } = await commerce.products.list({
-    limit: 5,
+    limit: 30,
   });
   const {data: categories} = await commerce.categories.list()
 
