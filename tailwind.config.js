@@ -14,6 +14,7 @@ module.exports = {
         "faded-black": "rgba(21,7,3,0.6)",
         "ecru-white": "#FAF8F3",
         "white-rock": "#E8E0CF",
+        black: "#000"
       },
       height: {
         112: "28rem",
@@ -43,6 +44,7 @@ module.exports = {
       textColor: ["checked"],
       rotate: ['group-hover'],
       scale: ['group-hover'],
+      display: ["group-hover"],
     
     },
   },

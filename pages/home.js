@@ -1,30 +1,57 @@
 import React from 'react'
-import { motion } from "framer-motion";
-import { BsArrowReturnRight } from 'react-icons/bs'
-import { Categories } from '../components/categories';
-import Slider from "react-slick";
-
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-
-import Caro from '../components/caro';
+import { useCartDispatch } from '../context/cart';
+import { commerce } from "../lib/commerce";
+import ProductGrid from "../components/ProductGrid";
+import { toast } from 'react-toastify';
+import { MdOutlineAddShoppingCart } from 'react-icons/md';
+import Product from '../components/Product';
 
 
-export default function Home() {
+export async function getServerSideProps() {
+  const { data } = await commerce.products.list();
+  const products = data.filter(({ active }) => active);
 
+  return {
+    props: {
+      products,
+ 
+ 
+    },
+    
+  };
+}
+
+export default function HomePage({products}) {
+  const { setCart } = useCartDispatch();
+
+
+
+
+
+  function handleChange(event, data, name){
+  commerce.cart
+    .add(data, 1)
+    .then(({ cart }) => {
+      setCart(cart);
+console.log(name)
+      return cart;
+    })
+    .then(({ subtotal }) =>
+      toast(
+        `${name} is now in your cart. Your subtotal is now ${subtotal.formatted_with_symbol}. Click to view what's in your cart.`,
+       
+      )
+    )
+    .catch(() => {
+      toast.error("Please try again.");
+    });
+  }
+    if (!products || products.length === 0) return null;
 
   return (
-    <><div className='container mx-auto w-full h-full  overflow-hidden'>
-     
-      <Categories />
-      <br />
-
-      
-    </div>
-
+    <>
   
-
-
+       <Product handleChange={handleChange} products={products}/>
     </>
   )
 }

@@ -4,6 +4,6 @@ module.exports = {
     defaultLocale: 'en-US',
   },
   images: {
-    domains: ["cdn.chec.io"],
+    domains: ["cdn.chec.io", "i.imgur.com"],
   },
 };

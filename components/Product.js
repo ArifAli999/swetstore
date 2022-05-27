@@ -1,38 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
 import cc from "classcat";
+import { MdOutlineAddShoppingCart } from 'react-icons/md'
 
-function Product({ media, name, permalink, price, className }) {
-  const imageClass = cc([
-    "relative rounded-lg hover:rounded-none overflow-hidden w-full transition-all w-30",
-    className,
-  ]);
+function Product({ products, handleChange }) {
 
+
+  console.log(products)
   return (
-    <div className=" p-2">
-    <Link href={`/products/${permalink}`}>
-      <a className="group relative">
-        {media?.source && (
-          <div className={imageClass}>
-            <Image
-              src={media.source}
-              alt={Product.name}
-             layout="fill"
-              sizes="306px, (min-width: 768px): 352px, (min-width: 1024px): 232px, (min-width: 1280px): 288px"
-              className="object-cover h-30"
-              priority={true}
-            />
+    <>
+      <div className='grid md:grid-cols-4 grid-cols-1 gap-10 mb-10 mt-5 '>
+
+        {products.map((product) => (
+          <div className=' p-0 w-full h-full ' key={product.id}>
+            <div className='bg-gray-100 grid p-10 justify-items-center items-center align-middle  content-center w-full  group relative'>
+              <button className='text-black font-sans font-light text-base px-1.5  absolute right-0 top-3  mr-2 hidden group-hover:block z-50' onClick={(e) => handleChange(e, product.id, product.name)}><MdOutlineAddShoppingCart size={30} /></button>
+              <button className='text-white font-sans font-semibold text-xs py-0.5 px-1.5  absolute left-0 top-3 ml-2  hidden group-hover:block z-50 bg-black rounded-lg' onClick={(e) => handleChange(e, product.id, product.name)}>
+              {product.price.formatted_with_symbol}
+              </button>
+
+              {product.media?.source && (
+               <div className="mt-2  overflow-hidden flex justify-center">
+                  <Image
+                    src="https://i.imgur.com/36IhkNN.png"
+                    alt={product.name}
+                    layout="intrinsic"
+                    width={500}
+                    height={500}
+                    sizes="506px, (min-width: 768px): 352px, (min-width: 1024px): 232px, (min-width: 1280px): 288px"
+                    className=" - w-max-full md:w-1/4 h-50 md:p-10 ml-2 -mr-2 text-center  cursor-pointer transform  md:group-hover:scale-105 transition-all duration-700 ease-in-out "
+                    priority={true}
+                    quality={100}
+                    style={{ backgroundColor: "#000" }} />
           </div>
-        )}
-        <div className="flex justify-between py-2 md:py-3 space-x-1">
-          <span className="text-sm md:text-base lg:text-lg font-semibold font-sans text-black">{name}</span>
-          <span className="text-sm md:text-base lg:text-lg font-bold font-sans ">
-            {price.formatted_with_symbol}
-          </span>
-        </div>
-      </a>
-    </Link>
-    </div>
+              )}
+
+            </div>
+
+            <div className='flex justify-between mt-2'>
+              <p className='text-gray-900 font-sans font-semibold text-lg '>{product.name}</p>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+
+
+
+
+
+
+
+    </>
   );
 }
 
