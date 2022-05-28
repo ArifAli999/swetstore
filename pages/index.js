@@ -73,14 +73,19 @@ console.log(name)
       <Head>
         <title>Radhas Sweet Shop</title>
       </Head>
-      <div className="md:min-h-screen ">
-      <div className='container mx-auto w-full h-full  overflow-hidden'>
-          
+      <div className="relative w-full h-full ">
+      <Header/>
+      <div className='mr-10 ml-10'>
+         
           <Caro /> 
   
           <Categories/>
           
           <FeaturedProds/>
+
+
+        <HomePage/>
+          
           <hr className="w-1/2 mx-auto h-full mb-10 "/>
           <p className="text-center mb-2 text-black font-black font-serif text-3xl">Latest Products
           </p>
@@ -93,14 +98,6 @@ console.log(name)
 
 
 
-          <motion.div
-            className="md:min-h-screen p-6 md:py-12 flex items-center md:w-full md:z-40 w-full"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-          >
-               
-          </motion.div>
         </div>
       </div>
     </>

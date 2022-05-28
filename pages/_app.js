@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps, router }) {
                 <Modal />
                 <Layout>
                   <motion.div
-                  
+                    className="container mx-auto w-full h-full  overflow-hidden"
                    initial="pageInitial"
                    animate="pageAnimate"
                    variants={{

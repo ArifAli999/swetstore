@@ -4,6 +4,8 @@ import {AnimatePresence} from  'framer-motion'
 import React, {useEffect} from 'react';
 import router from 'next/router';
 import { useRouter } from 'next/router'
+import Product from '../../components/Product';
+import Header from '../../components/Header';
 
 export async function getStaticProps({params}) {
   
@@ -57,9 +59,13 @@ export default function CategoryPage ({category,products}){
         };
     }, [router]);
     return (
-        <AnimatePresence>
-            <h1>{category.name}</h1>
-            <ProductList products={products}/>
-        </AnimatePresence>
+        <><Header /><AnimatePresence>
+            <div className='mt-10 mb-10'>
+                <h1 className='font-serif md:text-2xl text-black font-black mb-2'>
+                    {category.name}
+                </h1><br />
+                <Product products={products} />
+            </div>
+        </AnimatePresence></>
     )
 }
