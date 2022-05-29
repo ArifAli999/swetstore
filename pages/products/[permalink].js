@@ -120,11 +120,11 @@ function ProductPage({ product }) {
 
 
       <div className="bg-gray-400 p-2 md:ml-5 md:mr-5 rounded">
-        <div className=" md:flex-row grid grid-cols-1 p-4 items-start content-center h-full w-full bg-white rounded">
-          <div className=" p-6 mb-4">
+        <div className=" md:flex-row grid grid-cols-1 p-4 items-start content-center h-full w-full bg-white md:rounded">
+          <div className=" p-6 mb-4 flex justify-between items-center">
 
-            <h1 className="font-serif font-black italic text-2xl md:text-4xl lg:text-5xl mt-5">{product.name}</h1>
-            <p className="text-gray-600 font-sans font-black text-lg mt-5">{product.price.formatted_with_symbol}</p>
+            <h1 className="font-serif font-black italic text-2xl md:text-4xl lg:text-5xl ">{product.name}</h1>
+            <p className="text-white font-sans font-semibold text-lg  bg-black p-2 rounded">{product.price.formatted_with_symbol}</p>
 
           </div>
           <div className="md:py-12 h-full w-full p-4	 md:z-40 col-span-1 text-center flex justify-items-center overflow-hidden  bg-white rounded-md 	 ">
@@ -187,15 +187,15 @@ function ProductPage({ product }) {
             </div>
           </div>
 
-
+        
 
 
         </div>
       </div>
-
-      <div className="py-3 md:py-4 lg:py-8">
+      <div className="py-3 md:p-2 bg-gray-400 mt-10 mb-10 md:ml-5 md:mr-5 md:rounded">
         <RelatedProducts products={relatedProducts} />
       </div>
+    
     </React.Fragment>
   );
 }

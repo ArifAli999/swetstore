@@ -60,11 +60,13 @@ export default function CategoryPage ({category,products}){
     }, [router]);
     return (
         <><AnimatePresence>
-            <div className='mt-10 mb-10'>
-                <h1 className='font-serif md:text-2xl text-black font-black mb-2'>
+            <div className='mt-10 mb-10 bg-gray-400 p-2 md:rounded'>
+                <div className='bg-white p-6'>
+                <h1 className='font-serif text-2xl text-center md:text-6xl text-black font-black mb-4 mt-4'>
                     {category.name}
                 </h1><br />
                 <Product products={products} />
+                </div>
             </div>
         </AnimatePresence></>
     )
