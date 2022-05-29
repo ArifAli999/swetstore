@@ -6,6 +6,9 @@ import router from 'next/router';
 import { useRouter } from 'next/router'
 import Product from '../../components/Product';
 import Header from '../../components/Header';
+import {useCartDispatch} from '../../context/cart'
+import { toast } from 'react-toastify';
+
 
 export async function getStaticProps({params}) {
   
@@ -58,6 +61,31 @@ export default function CategoryPage ({category,products}){
             router.beforePopState(() => true);
         };
     }, [router]);
+    const { setCart } = useCartDispatch();
+
+
+
+
+
+    function handleChange(event, data, name){
+    commerce.cart
+      .add(data, 1)
+      .then(({ cart }) => {
+        setCart(cart);
+  console.log(name)
+        return cart;
+      })
+      .then(({ subtotal }) =>
+        toast(
+          `${name} is now in your cart. Your subtotal is now ${subtotal.formatted_with_symbol}. Click to view what's in your cart.`,
+         
+        )
+      )
+      .catch(() => {
+        toast.error("Please try again.");
+      });
+    }
+
     return (
         <><AnimatePresence>
             <div className='mt-10 mb-10 bg-gray-400 p-2 md:rounded'>
@@ -65,7 +93,7 @@ export default function CategoryPage ({category,products}){
                 <h1 className='font-serif text-2xl text-center md:text-6xl text-black font-black mb-4 mt-4'>
                     {category.name}
                 </h1><br />
-                <Product products={products} />
+                <Product  handleChange={handleChange} products={products} />
                 </div>
             </div>
         </AnimatePresence></>
