@@ -20,7 +20,7 @@ function Product({ products, handleChange }) {
           <div className=' p-0 w-full h-full ' key={product.id}>
               <Link href='/home'  key={product.id} title="hi">
           <>
-            <div className='bg-gray-100 grid p-10 justify-items-center items-center align-middle  content-center w-full  group relative' onClick={() => router.push('/home')}>
+            <div className='bg-gray-100 grid p-10 justify-items-center items-center align-middle  content-center w-full  group relative' >
             
               <button className='text-black font-sans font-light text-base px-1.5  absolute right-0 top-3  mr-2 hidden group-hover:block z-50' onClick={(e) => handleChange(e, product.id, product.name)}><MdOutlineAddShoppingCart size={30} /></button>
               <button className='text-white font-sans font-semibold text-xs py-0.5 px-1.5  absolute left-0 top-3 ml-2  hidden group-hover:block z-50 bg-black rounded-lg'>
