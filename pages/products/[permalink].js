@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
+import { AiFillCaretDown } from 'react-icons/ai'
 
 import { commerce } from "../../lib/commerce";
 import { useCartDispatch } from "../../context/cart";
@@ -14,9 +15,10 @@ import VariantPicker from "../../components/VariantPicker";
 import ProductImages from "../../components/ProductImages";
 import ProductAttributes from "../../components/ProductAttributes";
 import RelatedProducts from "../../components/RelatedProducts";
+import DiscBoxes from '../../components/DiscBoxes'
 
 
-import {BsFillCartPlusFill} from 'react-icons/bs'
+import { BsFillCartPlusFill } from 'react-icons/bs'
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -42,7 +44,7 @@ export async function getStaticPaths() {
         permalink,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -55,6 +57,7 @@ function ProductPage({ product }) {
     related_products: relatedProducts,
   } = product;
   const images = assets.filter(({ is_image }) => is_image);
+  const attributes = product.attributes;
   const setTheme = useThemeDispatch();
   const { openModal } = useModalDispatch();
 
@@ -104,7 +107,8 @@ function ProductPage({ product }) {
       .catch(() => {
         toast.error("Please try again.");
       });
-  console.log(product)
+
+  console.log(product.attributes)
   return (
 
     <React.Fragment>
@@ -115,20 +119,25 @@ function ProductPage({ product }) {
 
 
 
-      <div className="bg-gray-50 border-b-4 border-green-500">
-        <div className="h-screen grid md:grid-cols-2 p-4 gap-0 content-center">
+      <div className="bg-gray-400 p-2 md:ml-5 md:mr-5 rounded">
+        <div className=" md:flex-row grid grid-cols-1 p-4 items-start content-center h-full w-full bg-white rounded">
+          <div className=" p-6 mb-4">
 
-          <div className="md:py-12 h-max w-fit p-4	 md:z-40 col-span-1 text-center flex justify-items-center ">
+            <h1 className="font-serif font-black italic text-2xl md:text-4xl lg:text-5xl mt-5">{product.name}</h1>
+            <p className="text-gray-600 font-sans font-black text-lg mt-5">{product.price.formatted_with_symbol}</p>
+
+          </div>
+          <div className="md:py-12 h-full w-full p-4	 md:z-40 col-span-1 text-center flex justify-items-center overflow-hidden  bg-white rounded-md 	 ">
 
             <ProductImages images={images} />
             <ProductAttributes {...meta} />
 
           </div>
 
-          <div className="col-span-1 p-4">
+          <div className="col-span-1 w-full  p-4 bg-white">
 
             <motion.div
-              className="py-6 md:py-12 "
+              className="p-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{
                 opacity: 1,
@@ -139,12 +148,11 @@ function ProductPage({ product }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
-              <div className=" flex justify-between align-middle">
-                <h1 className="font-serif font-medium italic text-2xl md:text-4xl lg:text-5xl mt-5">{product.name}</h1>
 
-              </div>
 
-              <div className="flex items-center justify-between pt-3">
+
+
+              <div className="flex items-center justify-between pt-3 p-4">
                 <div className="flex items-center">
 
 
@@ -157,15 +165,24 @@ function ProductPage({ product }) {
 
 
               </div>
-              <div
-                className="pt-5 md:pt-8 lg:pt-10 md:leading-relaxed lg:leading-loose lg:text-lg"
-                dangerouslySetInnerHTML={{ __html: product.description }}
-              />
+
+
             </motion.div>
-            <div className="text-center">
-            <Button onClick={addToCart} className="mt-10 text-center text-sm p-2" >
-              <p className="mr-2">ADD TO CART</p>
-              <BsFillCartPlusFill size={20}/>
+            <main className="text-gray-800 py-4 bg-gray-300  border-2 border-gray-600 p-2 w-full  flex justify-between appearance-none focus:outline-none hover:opacity-90 transition-all duration-500 ease-in-out font-serif font-black mb-4">
+              <p className="border-4  border-black ">Description</p>
+              <AiFillCaretDown size={20}/>
+              </main>
+
+            <div
+              className="pt-0 md:pt-2 md:mb-2 md:leading-relaxed lg:leading-loose lg:text-base p-4"
+              dangerouslySetInnerHTML={{ __html: product.description }}
+            />
+            <DiscBoxes attributes={product.attributes} />
+            <div className="text-center flex justify-center p-4">
+
+              <Button onClick={addToCart} className="mt-10 text-center text-sm p-2" >
+                <p className="mr-2">ADD TO CART</p>
+                <BsFillCartPlusFill size={20} />
               </Button>
             </div>
           </div>

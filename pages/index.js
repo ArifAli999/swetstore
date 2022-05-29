@@ -18,7 +18,7 @@ import { useCartDispatch } from '../context/cart';
 
 export async function getServerSideProps() {
   const { data } = await commerce.products.list({
-    limit: 30,
+    limit: 100,
   });
   const {data: categories} = await commerce.categories.list()
 
@@ -74,8 +74,8 @@ console.log(name)
         <title>Radhas Sweet Shop</title>
       </Head>
       <div className="relative w-full h-full ">
-      <Header/>
-      <div className='mr-10 ml-10'>
+    
+      <div className=''>
          
           <Caro /> 
   

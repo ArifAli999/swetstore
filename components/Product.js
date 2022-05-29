@@ -8,7 +8,7 @@ function Product({ products, handleChange }) {
   const router = useRouter()
 
 
-  console.log(products)
+
   if (!products || products.length === 0) return null;
   return (
     <>
@@ -36,7 +36,7 @@ function Product({ products, handleChange }) {
                     width={500}
                     height={500}
                     sizes="506px, (min-width: 768px): 352px, (min-width: 1024px): 232px, (min-width: 1280px): 288px"
-                    className=" - w-max-full md:w-1/4 h-50 md:p-10 ml-2 -mr-2 text-center  cursor-pointer transform  md:group-hover:scale-105 transition-all duration-700 ease-in-out "
+                    className="  w-max-full md:w-1/4 h-50 md:p-10 ml-2 -mr-2 text-center  cursor-pointer transform  md:group-hover:scale-105 transition-all duration-700 ease-in-out "
                     priority={true}
                     quality={100}
                    />

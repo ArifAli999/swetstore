@@ -59,7 +59,7 @@ export default function CategoryPage ({category,products}){
         };
     }, [router]);
     return (
-        <><Header /><AnimatePresence>
+        <><AnimatePresence>
             <div className='mt-10 mb-10'>
                 <h1 className='font-serif md:text-2xl text-black font-black mb-2'>
                     {category.name}

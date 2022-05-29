@@ -78,3 +78,15 @@ padding-right: 40px;
 	object-fit: cover;
 	background-attachment: fixed;
 }
+
+.swiper-scrollbar {
+opacity: 1 !important;
+position: absolute;
+bottom: 0;}
+
+
+
+.swiper-container {
+     margin-left: none !important;
+     margin-right: none !important;
+     }

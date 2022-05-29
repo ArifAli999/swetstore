@@ -19,9 +19,11 @@ import { CheckoutProvider } from "../context/checkout";
 import Layout from "../components/Layout";
 import Modal from "../components/Modal";
 
+import Header from "../components/Header";
+import 'swiper/swiper-bundle.css'
 
-import "swiper/swiper-bundle.min.css";
-import 'swiper/swiper.min.css'
+
+ 
 
 
 
@@ -89,6 +91,7 @@ function MyApp({ Component, pageProps, router }) {
 
                 
                   <AnimatePresence initial={false} exitBeforeEnter>
+                  <Header/>
                     <Component  {...pageProps} key={router.route} />
                   </AnimatePresence>
                   <ToastContainer {...toastOptions} />
