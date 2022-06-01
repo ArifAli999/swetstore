@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
+import {GiExitDoor} from 'react-icons/gi'
 
 import { useModalState, useModalDispatch } from "../context/modal";
 import { useCheckoutDispatch } from "../context/checkout";
@@ -43,10 +44,10 @@ function Modal() {
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence className>
       {open && (
         <motion.div
-          className="bg-ecru-white z-50 fixed overflow-scroll inset-0"
+          className="bg-white z-50 fixed overflow-scroll inset-0 mb-0"
           initial={{ opacity: 0, y: -50 }}
           animate={{
             opacity: 1,
@@ -63,7 +64,7 @@ function Modal() {
                   className="appearance-none leading-none text-black p-1 -mr-1 focus:outline-none"
                   onClick={closeAndResetModal}
                 >
-                  Close
+                  <GiExitDoor size={30}/>
                 </button>
               </div>
             </div>

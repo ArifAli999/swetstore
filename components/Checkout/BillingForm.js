@@ -19,7 +19,7 @@ const style = {
     "::placeholder": {
       color: "rgba(21,7,3,0.3)",
     },
-    color: "#150703",
+    color: "#fff",
     fontSize: "16px",
     fontFamily: `Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
     iconColor: "#6B7280",

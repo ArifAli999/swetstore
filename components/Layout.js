@@ -5,9 +5,9 @@ function Layout({ children }) {
   return (
     <>
  
-      <div className="">
+      <div className="md:mr-10 md:ml-10">
        
-        <div className="md:mr-10 md:ml-10">
+        <div className>
     
           {children}</div>
       </div>

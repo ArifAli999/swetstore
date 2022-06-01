@@ -41,6 +41,8 @@ function Checkout({ cartId }) {
   const captureOrder = async (values) => {
     setProcessing(true);
 
+    
+    
     const {
       customer,
       shipping,
@@ -55,6 +57,7 @@ function Checkout({ cartId }) {
         name: `${billing.firstname} ${billing.lastname}`,
         email: customer.email,
       },
+     
     });
 
     if (error) {

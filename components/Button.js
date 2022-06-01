@@ -23,7 +23,7 @@ function Button({ className, ...props }) {
   const theme = useThemeState();
 
   const buttonClass = cc([
-    "appearance-none border-none py-2.5 px-3.5 md:px-4 w-40 rounded transition focus:outline-none bg-black text-white flex justify-between hover:opacity-75 hover:rounded-sm transition-all duration-500 ease-in-out ",
+    "bg-gray-500 text-black text-gray-200 font-semibold appearance-none border-none py-2.5 px-3.5 md:px-4 w-40 rounded transition focus:outline-none bg-black text-white  hover:opacity-75 hover:rounded-sm transition-all duration-500 ease-in-out ",
  
     className,
   ]);
