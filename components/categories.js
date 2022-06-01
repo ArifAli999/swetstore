@@ -31,7 +31,9 @@ export const Categories = () => {
       {cats.map((c) => (
 
 
+<Link href='/home' key={c.name} title="hi">
 
+<>
         <motion.div
           key={c.id}
           initial={{ opacity: 1, y: 100 }}
@@ -42,15 +44,13 @@ export const Categories = () => {
               delay: 1.25,
             },
           }}
-          className=' group h-full w-full bg-gray-400 shadow-xl cursor-pointer opacity-90 hover:opacity-100 transition-all ease-in-out duration-500 overflow-hidden '>
+          className=' group h-full w-full bg-gray-800 shadow-xl cursor-pointer opacity-90 hover:opacity-100 transition-all ease-in-out duration-500 overflow-hidden '>
 
 
           <div className=' grid grid-cols-5 justify-items-center justify-center items-center align-middle w-full h-full '
           >
 
-            <Link href={`/categories/${c.slug}`} key={c.id}>
-
-              <>
+          
 
                 <div className='col-span-3  align-middle  p-1.5 rounded float-right ml-20'>
 
@@ -82,15 +82,15 @@ export const Categories = () => {
 
                 </div>
 
-              </></Link>
+              
 
           </div>
-
+          
 
 
 
         </motion.div>
-
+        </></Link>
 
       ))}
 
