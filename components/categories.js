@@ -26,7 +26,6 @@ export const Categories = () => {
 
   return (
     <><div className='grid md:grid-cols-3 gap-10 items-center align-middle self-center justify-items-center mt-10'>
-   <Link href='/categories/sweets'><button className='p-6'>Hiii</button></Link> 
       {cats.map((c) => (
       
           <motion.div

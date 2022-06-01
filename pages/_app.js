@@ -90,10 +90,10 @@ function MyApp({ Component, pageProps, router }) {
                    }}>
 
                 
-                  <AnimatePresence initial={false} exitBeforeEnter>
+                 
                   <Header/>
                     <Component  {...pageProps} key={router.route} />
-                  </AnimatePresence>
+               
                   <ToastContainer {...toastOptions} />
                   </motion.div>
 
