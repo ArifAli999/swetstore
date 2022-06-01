@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 import { useCartDispatch } from '../context/cart';
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data } = await commerce.products.list({
     limit: 100,
   });
