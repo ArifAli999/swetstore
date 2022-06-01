@@ -31,66 +31,54 @@ export const Categories = () => {
       {cats.map((c) => (
 
 
-<Link href='/home' key={c.name} title="hi">
 
-<>
-        <motion.div
+        <div
           key={c.id}
-          initial={{ opacity: 1, y: 100 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              delay: 1.25,
-            },
-          }}
-          className=' group h-full w-full bg-gray-800 shadow-xl cursor-pointer opacity-90 hover:opacity-100 transition-all ease-in-out duration-500 overflow-hidden '>
+
+          className=' group h-full w-full bg-gray-700 shadow-xl cursor-pointer opacity-90 hover:opacity-100 transition-all ease-in-out duration-500 overflow-hidden '>
+          <Link href={`/categories/${c.slug}`}  key={c.slug} title="hi">
 
 
-          <div className=' grid grid-cols-5 justify-items-center justify-center items-center align-middle w-full h-full '
-          >
 
-          
-
-                <div className='col-span-3  align-middle  p-1.5 rounded float-right ml-20'>
-
-                  <motion.div
-                    whileHover={{
-                      scale: 1.1,
-                    }}
+            <div className=' grid grid-cols-5 justify-items-center justify-center items-center align-middle w-full h-full '
+            >
 
 
-                    className='  text-gray-300 text-center z-40 group-hover:text-gray-50 transition-all duration-300 ease-in-out p-2 text-4xl font-serif font-black'>
 
-                    <a href={`/categories/${c.slug}`}> {c.name}</a>
+              <div className='col-span-3  align-middle  p-1.5 rounded float-right ml-20'>
+
+                <div
 
 
-                  </motion.div>
+                  className='  text-gray-300 text-center z-40 group-hover:text-gray-50 transition-all duration-300 ease-in-out p-2 text-4xl font-serif font-black'>
 
-                </div>
-                <div className='col-span-2'>
+                  <a href={`/categories/${c.slug}`}> {c.name}</a>
 
-                  <motion.div
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 1 }
-                    }}
-                    className='float-right w-56 h-56	relative overflow-hidden'>
-                    <img src='https://i.imgur.com/36IhkNN.png' className='h-52 w-52 absolute top-10 left-24 md:left-20 transform origin-top-left group-hover:scale-150 transition-all duration-500 ease-in-out  '></img>
-
-                  </motion.div>
 
                 </div>
 
-              
+              </div>
+              <div className='col-span-2'>
 
-          </div>
-          
+                <div
+
+
+                  className='float-right w-56 h-56	relative overflow-hidden'>
+                  <img src='https://i.imgur.com/36IhkNN.png' className='h-52 w-52 absolute top-10 left-24 md:left-20 transform origin-top-left group-hover:scale-150 transition-all duration-500 ease-in-out  '></img>
+
+                </div>
+
+              </div>
 
 
 
-        </motion.div>
-        </></Link>
+            </div>
+
+
+
+          </Link>
+        </div>
+
 
       ))}
 
