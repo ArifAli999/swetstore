@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide  } from "swiper/react";
-import {AiFillCaretDown} from 'react-icons/ai'
-import { EffectFade } from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper'
 
 
 // import Swiper and modules styles
@@ -9,23 +8,27 @@ import { EffectFade } from 'swiper';
 // init Swiper:
 
 import React from 'react'
-
+SwiperCore.use([Autoplay, Pagination]);
 function Caro() {
 
   return (
-    <><Swiper
-      spaceBetween={20}
-      slidesPerView='auto'
     
+    <><Swiper
+  
+      slidesPerView="auto"
+      autoplay={true}
+      navigation
+      pagination={{clickable: true}}
+      direction="horizontal"
       grabCursor={true}
-
+      modules={[Autoplay, Pagination, Navigation]}
       
-      resistance={false}
-      modules={[EffectFade]} effect="cube"
+     
+      
      
      
 
-      className='grid grid-flow-col md:auto-cols-max   bg-gray-200 mt-10 shadow-md justify-center md:gap-10 gap-0 items-center relative w-full h-128 group mb-10'>
+      className='grid grid-flow-col md:auto-cols-max   bg-gray-200 mt-10 shadow-md justify-center md:gap-10 gap-0 items-center relative w-fit h-128 group mb-10'>
       <SwiperSlide style={{ width: "100%" }}>
         <div className='mt-10 p-0 mb-10 flex justify-items-center items-center self-center w-full h-full text-center justify-center gap-0'>
           <div className="-mr-10 md:-mr-0 ">
@@ -44,7 +47,6 @@ function Caro() {
 
           </div>
           <button className=' mb-2 ml-5 absolute bottom-0 font-light font-Lato text-gray-600 px-1.5 py-0.5 hover:opacity-75   mx-auto flex justify-items-center items-center '>
-          <AiFillCaretDown size={30} />
         </button>
         </div>
 
@@ -56,7 +58,7 @@ function Caro() {
       </SwiperSlide>
 
 
-      <SwiperSlide style={{ width: "100%" }}>
+      <SwiperSlide >
         <div className='mt-10 p-0 mb-10 flex justify-items-center items-center self-center w-full h-full text-center justify-center'>
         <div className="-mr-10 md:-mr-0">
           <img src='https://i.imgur.com/36IhkNN.png' className='object-cover md:h-58 md:w-58 h-48 transform origin-top-left rotate-12 group-hover:rotate-0 transition-all duration-500 ease-in-out '></img>
@@ -74,7 +76,6 @@ function Caro() {
 
           </div>
           <button className=' mb-2 ml-5  absolute bottom-0 font-light font-Lato text-gray-600 px-1.5 py-0.5 hover:opacity-75   mx-auto flex justify-items-center items-center '>
-          <AiFillCaretDown size={30} />
         </button>
         </div>
       
