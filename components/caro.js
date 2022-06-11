@@ -16,7 +16,7 @@ function Caro() {
     <><Swiper
       spaceBetween={20}
       slidesPerView='auto'
-      direction="horizontal"
+    
       grabCursor={true}
 
       
