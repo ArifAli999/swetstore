@@ -16,14 +16,14 @@ function Caro() {
     <><Swiper
       spaceBetween={20}
       slidesPerView='auto'
-      direction="vertical"
+      direction="horizontal"
       grabCursor={true}
 
       
       resistance={false}
       modules={[EffectFade]} effect="cube"
-      onSlideChangeEnd={() => swiper.activeIndex>0 ? (console.log(end)): ''}
-      onSwiper={(swiper) => console.log(swiper)}
+     
+     
 
       className='grid grid-flow-col md:auto-cols-max   bg-gray-200 mt-10 shadow-md justify-center md:gap-10 gap-0 items-center relative w-full h-128 group mb-10'>
       <SwiperSlide style={{ width: "100%" }}>
