@@ -106,11 +106,11 @@ function ShippingForm() {
   };
 
   return (
-    <div className="md:flex md:space-x-12 lg:space-x-24">
-      <div className="md:w-1/2">
+    <div className="md:flex gap-2 bg-gray-400 p-2 ">
+      <div className="md:w-1/2 bg-white p-4">
         <fieldset className="mb-3 md:mb-4">
-          <legend className="text-black font-medium text-lg md:text-xl py-3 block">
-            Shipping address
+          <legend className="text-black font-medium text-lg md:text-xl py-6 block uppercase">
+            Shipping Information
           </legend>
 
           <AddressFields
@@ -120,7 +120,7 @@ function ShippingForm() {
           />
         </fieldset>
       </div>
-      <div className="md:w-1/2">
+      <div className="md:w-1/2 bg-white p-4">
         <fieldset className="mb-3 md:mb-4">
           <legend className="text-black font-medium text-lg md:text-xl py-3 block">
             Shipping

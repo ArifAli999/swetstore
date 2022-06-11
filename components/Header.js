@@ -26,7 +26,7 @@ function Header() {
         
 
 
-       <div className="float-right md:fixed right-2 bottom-4 z-50">
+       <div className="float-right md:fixed right-2 bottom-4 ">
         <CartSummary />
         </div>
       </div>

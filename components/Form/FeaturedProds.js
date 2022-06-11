@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-function FeaturedProds() {
+function FeaturedProds({products}) {
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -33,49 +33,34 @@ function FeaturedProds() {
       <p className="text-center mb-2 text-black font-black font-serif text-3xl">Best Sellers
           </p>
           <hr className="w-1/2 mx-auto h-full mb-20 mt-10"/>
-    <Carousel centerMode={true}  
-    itemClassName="carousel-item"
-     ssr={true} // means to render carousel on server-side.
-     swipeable={true}
-    infinite={true}
-    responsive={responsive} className='flex flex-col md:flex-row justify-between mt-5 mb-5 gap-5 w-full h-full  '>
-   
-    <div className='md:p-6  w-full h-fit cursor-pointer'>
-        <main className='grid md:p-6 p-2  justify-items-center items-center align-middle content-center w-fit h-full bg-green-100 rounded'>
-          <img src='https://i.imgur.com/36IhkNN.png' className='max-w-full h-auto md:p-2 ml-2   -mr-2 text-center object-cover '></img>
-        </main>
-      </div>
-
-      <div className='md:p-6  w-full   cursor-pointer'>
-        <main className='grid md:p-6 p-2  justify-items-center items-center align-middle content-center w-full h-full bg-indigo-100 rounded'>
-          <img src='https://i.imgur.com/36IhkNN.png' className='max-w-full h-auto md:p-2 ml-2   -mr-2 text-center object-cover'></img>
-        </main>
-      </div>
-
-      <div className='md:p-6 w-full cursor-pointer'>
-        <main className='grid md:p-6 p-2 justify-items-center items-center align-middle content-center w-full h-full bg-pink-50 rounded'>
-          <section className="w-full h-full relative group">
-          <img src='https://i.imgur.com/36IhkNN.png' className='max-w-full h-auto md:p-2 ml-2   -mr-2 text-center object-cover'></img>
-          <span className="opacity-0 group-hover:opacity-75 duration-300 absolute inset-x-0 bottom-0 flex w-full h-full justify-center items-center text-xl bg-gray-200 text-black font-semibold">Dwayne</span>
-
-          </section>
-        </main>
-      </div>
-
-
-      <div className='md:p-6  w-full  cursor-pointer'>
-        <main className='grid md:p-6 p-2  justify-items-center items-center align-middle content-center w-full h-full bg-yellow-50 rounded'>
-          <img src='https://i.imgur.com/36IhkNN.png' className='max-w-full h-auto md:p-2 ml-2   -mr-2 text-center object-cover'></img>
-        </main>
-      </div>
-
-      <div className='md:p-6  w-full  cursor-pointer '>
-        <main className='grid md:p-6 p-2 justify-items-center items-center align-middle content-center w-full h-full bg-purple-100 rounded'>
-          <img src='https://i.imgur.com/36IhkNN.png' className='max-w-full h-auto md:p-2 ml-2   -mr-2 text-center object-cover'></img>
-        </main>
-      </div>
-
-    </Carousel>
+          <Carousel centerMode={true}  
+           itemClassName="carousel-item"
+            ssr={true} // means to render carousel on server-side.
+            swipeable={true}
+            infinite={true}
+           responsive={responsive} className=' '>
+          
+          {products.map((p)=> (
+        
+    
+       
+             <div className='p-6 w-full cursor-pointer' key={p.id}>
+               <main className='grid md:p-6 p-2 justify-items-center items-center align-middle content-center w-full h-full bg-pink-50 rounded'>
+                 <section className="w-full h-full relative group">
+                 <img src='https://i.imgur.com/36IhkNN.png' className='max-w-full h-auto md:p-2 ml-2   -mr-2 text-center object-cover'></img>
+                 <span className="opacity-0 group-hover:opacity-75 duration-300 absolute inset-x-0 bottom-0 flex w-full h-full justify-center items-center text-xl bg-gray-200 text-black font-semibold">{p.name}</span>
+       
+                 </section>
+               </main>
+             </div>
+       
+       
+            
+       
+          
+          ))}
+           </Carousel>
+    
 
   </div>
   )

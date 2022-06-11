@@ -11,9 +11,9 @@ function CheckoutSummary({ subtotal, tax, shipping, line_items = [], total }) {
   return (
     <div className="py-6">
       <div className="md:flex md:justify-between md:space-x-6">
-        <div className="w-full md:w-1/2">
-          <ol>
-            {subtotal && <li>Subtotal: {subtotal.formatted_with_symbol}</li>}
+        <div className="w-full md:w-1/2 bg-gray-400 p-2">
+          <div className="p-4 bg-white">
+            {subtotal && <li className="list-none text-base font-sans">Subtotal: {subtotal.formatted_with_symbol}</li>}
             {tax && <li>Tax: {tax.amount.formatted_with_symbol}</li>}
             {shipping && (
               <li>Shipping: {shipping.price.formatted_with_symbol}</li>
@@ -24,7 +24,7 @@ function CheckoutSummary({ subtotal, tax, shipping, line_items = [], total }) {
                 {count === 1 ? "item" : "items"}
               </li>
             )}
-          </ol>
+          </div>
         </div>
         <div className="w-full md:w-1/2 md:flex md:items-end md:justify-end">
           <div className="flex items-center space-x-3">

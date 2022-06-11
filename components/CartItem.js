@@ -49,7 +49,7 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
       );
 
   return (
-    <div className="">
+    <div className="mb-2">
     <div className="py-3 md:py-4 lg:py-6 md:p-2 mt-0 flex md:items-center space-x-2 md:space-x-4 lg:space-x-4 gap-0 border-b-2 border-gray-200 border-solid  relative group hover:bg-gray-100 cursor-pointer transition-all duration-300 ease-in-out">
          <div className="absolute right-0 top-0">
               <button
@@ -85,29 +85,30 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
           )}
         </div>
         <div className="flex flex-col items-start md:items-end justify-between flex-grow mr-10">
-          <div className="text-lg md:text-xl lg:text-2xl font-sans font-light">
+          <div className="text-lg md:text-xl lg:text-2xl font-sans font-light mb-2">
             {line_total.formatted_with_symbol}
           </div>
-        </div>
-        <div className=" flex md:flex-col items-center md:items-center justify-between">
+          <div className=" flex md:flex-col items-center md:items-center justify-between">
             <div className="inline-flex items-center">
              
               <button
                 onClick={decrementQuantity}
-                className=" font-sans font-light appearance-none inline-flex items-center justify-center rounded-full border border-gray-500 w-5 h-5 text-lg text-black focus:outline-none hover:bg-gray-400 hover:opacity-75 transition bg-gray-300"
+                className=" font-sans font-light appearance-none inline-flex items-center justify-center rounded-full border border-gray-500 w-5 h-5 text-lg text-white focus:outline-none hover:bg-gray-400 hover:opacity-75 transition bg-gray-500"
               >
-                -
+               -
               </button>
               <span className="px-2 md:text-lg">{quantity}</span>
               <button
                 onClick={incrementQuantity}
-                className=" font-sans font-light appearance-none inline-flex items-center justify-center rounded-full border border-gray-500 w-5 h-5 text-lg text-black focus:outline-none hover:bg-gray-400 hover:opacity-75 transition bg-gray-300"
+                className=" font-sans font-light appearance-none inline-flex items-center justify-center rounded-full border border-gray-500 w-5 h-5 text-lg text-white focus:outline-none hover:bg-gray-400 hover:opacity-75 transition bg-gray-500"
               >
                 +
               </button>
             </div>
          
           </div>
+        </div>
+      
        
       </div>
     </div>

@@ -7,7 +7,7 @@ function CheckoutSummary({ has, fulfillment, order }) {
 
   return (
     <div className="py-6">
-      <div className="md:flex md:justify-between md:space-x-6">
+      <div className="md:flex md:justify-between md:space-x-6 bg-gray-400">
         <div className="w-full md:w-1/2">
           <ol>
             <li>Subtotal: {subtotal.formatted_with_symbol}</li>

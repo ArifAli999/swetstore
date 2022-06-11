@@ -81,7 +81,7 @@ console.log(name)
   
           <Categories/>
           
-          <FeaturedProds/>
+          <FeaturedProds products={products}/>
 
 
         <HomePage/>

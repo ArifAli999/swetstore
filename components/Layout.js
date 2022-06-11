@@ -10,7 +10,10 @@ function Layout({ children }) {
         <div className>
     
           {children}</div>
+        
+       
       </div>
+      <Footer/>
      
     </>
   );

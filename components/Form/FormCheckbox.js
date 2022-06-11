@@ -28,7 +28,7 @@ function FormCheckbox({
           id={props.id || name}
           name={name}
           type="checkbox"
-          className="appearance-none bg-transparent checked:bg-black border border-faded-black checked:border-black hover:border-black focus:border-black focus:checked:outline-none focus:outline-none text-black rounded w-5 h-5 cursor-pointer"
+          className="appearance-none bg-transparent checked:bg-pink-500 border border-faded-black checked:border-black hover:border-black focus:border-black focus:checked:outline-none focus:outline-none text-black rounded w-5 h-5 cursor-pointer"
           {...props}
         />
 
