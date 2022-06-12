@@ -15,20 +15,20 @@ function Caro() {
     
     <><Swiper
   
-      slidesPerView="auto"
-      autoplay={true}
-      navigation
-      pagination={{clickable: true}}
-      direction="horizontal"
-      grabCursor={true}
-      modules={[Autoplay, Pagination, Navigation]}
+    spaceBetween={30}
+    centeredSlides={true}
+    autoplay={{
+      delay: 2500,
+      disableOnInteraction: false
+    }}
+    modules={[Autoplay]}
       
      
       
      
      
 
-      className='grid grid-flow-col md:auto-cols-max   bg-gray-200 mt-10 shadow-md justify-center md:gap-10 gap-0 items-center relative w-fit h-128 group mb-10'>
+      className='w-full h-128 bg-gray-200 group'>
       <SwiperSlide style={{ width: "100%" }}>
         <div className='mt-10 p-0 mb-10 flex justify-items-center items-center self-center w-full h-full text-center justify-center gap-0'>
           <div className="-mr-10 md:-mr-0 ">

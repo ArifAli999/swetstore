@@ -50,7 +50,7 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
 
   return (
 
-    <div className='flex md:flex-row w-fit md:gap-4 md:items-center ml-4 mr-4 mb-4 bg-white '>
+    <div className='flex md:flex-row w-fit md:gap-4 md:items-center ml-4 mr-4 mb-4 bg-white relative '>
       <div className='bg-gray-100 text-center p-4 h-fit w-40  md:h-fit  md:w-40  flex items-center'>
         <Image
 
@@ -63,8 +63,10 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
           quality={100}
           />
       </div>
+
+      {/**Mobile design */}
       <div className='md:hidden relative  w-full  flex-col bg-white'>
-        <p className="absolute right-2 top-2 text-black font-black">X</p>
+       
      <p className="mt-4 ml-2 text-black font-bold">{name}</p>
    
      <p className=' mt-4 text-gray-500 font-Lato font-semibold  text-sm md:text-md bg-white-100 p-0.5 md:p-2 border-b-2 border-solid border-gray-50'>&nbsp;&nbsp;Size: 1.5L</p>
@@ -75,6 +77,18 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
 
 
       </div>
+
+          {/**larger screens design */}
+
+      <div className="absolute right-0 top-0 ">
+              <button
+                onClick={handleRemoveItem}
+                className="text-center p-2 text-black hover:opacity-75 transition-all duration-200 ease-in-out"
+              >
+                <TiDelete size={20}/>
+              </button>
+            </div>
+
       <div className=' p-4 col-span-6 md:flex-1  hidden md:block'>
         <span className='text-black font-sans font-semibold text-base md:text-lg'>{name}</span>
       </div>
@@ -82,12 +96,27 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
 
         <span className='text-gray-500 font-Lato font-semibold  text-sm md:text-md bg-white-100 p-0.5 md:p-2 border-2 border-solid border-gray-50'>15</span>
       </div>
-      <div className=' p-4  text-center hidden md:block'>
 
-        <span className='text-gray-500 font-Lato font-semibold  text-sm md:text-md bg-white-100 p-0.5 md:p-2 border-2 border-solid border-gray-50'>Size: 1.5L</span>
+
+      <div className=' p-4  text-center hidden md:block'>
+      {hasVariants && (
+        <p className='text-black font-Lato font-semibold  text-sm md:text-md bg-white-100 p-0.5 md:p-2 border-2 border-solid border-gray-50'>
+            Size: &nbsp;
+         <span>
+              {selected_options.map(({ option_name }, index) => (
+                <React.Fragment key={index}>
+                  {index ? `, ${option_name}` : option_name}
+                </React.Fragment>
+              ))} 
+              </span>
+             
+        </p>
+        )}
       </div>
+
+
       <div className=' p-4  md:flex-1 md:text-right  hidden md:block'>
-        <span className='text-black font-sans font-semibold text-sm md:text-lg md:mr-10'>$300.33</span>
+        <span className='text-black font-sans font-semibold text-sm md:text-lg md:mr-10'>{line_total.formatted_with_symbol}</span>
       </div>
       </div>
 

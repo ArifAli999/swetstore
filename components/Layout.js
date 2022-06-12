@@ -7,7 +7,7 @@ function Layout({ children }) {
  
       <div className="md:mr-10 md:ml-10">
        
-        <div className>
+        <div >
     
           {children}</div>
         

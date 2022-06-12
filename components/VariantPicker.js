@@ -8,10 +8,12 @@ function VariantPicker({ variantGroups = [], defaultValues = {}, ...props }) {
   return (
     <div className="space-x-2 md:flex">
       {variantGroups.map(({ options, ...group }) => (
+        
         <div
           key={group.id}
           className="rounded border border-black relative w-32 overflow-hidden"
         >
+          {console.log(variantGroups)}
           <label htmlFor={group.id} className="sr-only">
             {group.name}:
           </label>

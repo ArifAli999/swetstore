@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
     props: {
       product,
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
 
@@ -56,6 +56,8 @@ function ProductPage({ product }) {
     meta,
     related_products: relatedProducts,
   } = product;
+
+  console.log(variantGroups)
   const images = assets.filter(({ is_image }) => is_image);
   const attributes = product.attributes;
   const setTheme = useThemeDispatch();
