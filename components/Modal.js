@@ -47,7 +47,7 @@ function Modal() {
     <AnimatePresence className>
       {open && (
         <motion.div
-          className="bg-white z-50 fixed overflow-scroll inset-0 mb-0"
+          className="bg-gray-50 z-50 fixed overflow-scroll inset-0 mb-0"
           initial={{ opacity: 0, y: -50 }}
           animate={{
             opacity: 1,

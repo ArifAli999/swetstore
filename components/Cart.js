@@ -11,26 +11,27 @@ export default function Cart() {
 
   const isEmpty = line_items.length === 0;
 
+  console.log(line_items)
   return (
-    <div className=" w-full flex flex-col  mt-2 mb-0 justify-auto gap-2  p-4 items-start mx-auto container ">
+    <div className='grid grid-flow-row mx-auto container w-fit '>
 
+      <div className="mt-6">
 
-     
-
-      <div className="bg-white p-2 w-full">
-        {line_items.map((item) => (
+{line_items.map((item) => (
           <CartItem key={item.id} {...item} />
         ))}
-      </div>
+</div>
+     
 
-      <div className="">
+  
 
-        <Button
-          className=" bg-gray-800 appearance-none leading-none p-1 md:p-1.5 lg:px-2.5 text-lg md:text-xl"
+      <div className="mt-10 mb-10 text-right ml-4 mr-4">
+
+        <button
+          className=" bg-black text-white p-4 text-md font-semibold font-serif hover:text-pink-300 transition-all duration-300 ease-linear"
           onClick={showCheckout}
-        >
-          Check Out
-        </Button>
+        >Check Out
+        </button>
       </div>
 
     </div>
