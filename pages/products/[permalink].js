@@ -46,9 +46,11 @@ export async function getStaticPaths() {
     })),
     fallback: 'blocking',
   };
+  
 }
 
 function ProductPage({ product }) {
+  console.log(product)
   const { setCart } = useCartDispatch();
   const {
     variant_groups: variantGroups,
