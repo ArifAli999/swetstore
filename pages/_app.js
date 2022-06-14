@@ -37,9 +37,9 @@ const stripePromise = loadStripe(
 const toastOptions = {
   position: "bottom-center",
   draggable: false,
-  hideProgressBar: true,
+  hideProgressBar: false,
   className: "w-full md:max-w-xl",
-  toastClassName: "bg-ecru-white rounded-lg text-black px-3 shadow-md",
+  toastClassName: "bg-black rounded-lg text-white px-3 shadow-md",
 };
 
 function MyApp({ Component, pageProps, router }) {

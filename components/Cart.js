@@ -15,7 +15,7 @@ export default function Cart() {
   return (
     <div className='grid grid-flow-row mx-auto container w-fit '>
 
-      <div className="mt-6">
+      <div className="mt-6 mb-6 border-b-4 border-solid border-gray-300">
 
 {line_items.map((item) => (
           <CartItem key={item.id} {...item} />
